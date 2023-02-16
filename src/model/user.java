@@ -1,7 +1,7 @@
 package model;
 
 public class user {
-    private int idUser;
+    private Integer idUser;
     private String userName;
     private String password;
     private String role;
@@ -9,18 +9,18 @@ public class user {
     public user() {
     }
 
-    public user(int idUser, String userName, String password, String role) {
+    public user(Integer idUser, String userName, String password, String role) {
         this.idUser = idUser;
         this.userName = userName;
         this.password = password;
         this.role = role;
     }
 
-    public int getIdUser() {
+    public Integer getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(int idUser) {
+    public void setIdUser(Integer idUser) {
         this.idUser = idUser;
     }
 

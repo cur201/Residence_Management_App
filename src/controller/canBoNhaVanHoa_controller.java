@@ -38,18 +38,38 @@ public class canBoNhaVanHoa_controller {
         }
     }
 
+    public boolean themCoSoVatChatNhaVanHoa(coSoNhaVanHoa coSoNhaVanHoa){
+        try{        String sqlInsertInToThemCSVC = "INSERT INTO co_so_nha_van_hoa  VALUES (?, ?, ?, ?, ?)";
+            PreparedStatement themCSVCRecord = connectDB.prepareStatement(sqlInsertInToThemCSVC);
+            themCSVCRecord.setInt(1, coSoNhaVanHoa.getIdDoDung());
+            themCSVCRecord.setString(2, coSoNhaVanHoa.getTenDoDung());
+            themCSVCRecord.setString(3, coSoNhaVanHoa.getHienTrang());
+            if(coSoNhaVanHoa.getSoLuong() == null){
+                themCSVCRecord.setNull(4, Types.INTEGER);
+            }
+            else{
+                themCSVCRecord.setInt(4, coSoNhaVanHoa.getSoLuong());
+            }
+            themCSVCRecord.setString(5, coSoNhaVanHoa.getGhiChu());
+            boolean thanhCong = themCSVCRecord.execute();
+            return thanhCong;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return false;
+        }}
+
     public boolean themSuKienNhaVanHoa(suKienNhaVanHoa suKienNhaVanHoa)
     {
         try{
             String sqlInsertInToThemSuKienNhaVanHoa = "INSERT INTO su_kien_nha_van_hoa  VALUES (?, ?, ?, ?, ?)";
-            PreparedStatement themSuKienNhaVanhoaRecord = connectDB.prepareStatement(sqlInsertInToThemSuKienNhaVanHoa);
-            themSuKienNhaVanhoaRecord.setInt(1, suKienNhaVanHoa.getIdSuKien());
-            themSuKienNhaVanhoaRecord.setDate(2, suKienNhaVanHoa.getNgayToChuc());
-            themSuKienNhaVanhoaRecord.setString(3, suKienNhaVanHoa.getLoaiSuKien());
-            themSuKienNhaVanhoaRecord.setInt(4, suKienNhaVanHoa.getPhiSuDung());
-            themSuKienNhaVanhoaRecord.setString(5, suKienNhaVanHoa.getGhiChu());
+            PreparedStatement themSuKienNhaVanHoaRecord = connectDB.prepareStatement(sqlInsertInToThemSuKienNhaVanHoa);
+            themSuKienNhaVanHoaRecord.setInt(1, suKienNhaVanHoa.getIdSuKien());
+            themSuKienNhaVanHoaRecord.setDate(2, suKienNhaVanHoa.getNgayToChuc());
+            themSuKienNhaVanHoaRecord.setString(3, suKienNhaVanHoa.getLoaiSuKien());
+            themSuKienNhaVanHoaRecord.setInt(4, suKienNhaVanHoa.getPhiSuDung());
+            themSuKienNhaVanHoaRecord.setString(5, suKienNhaVanHoa.getGhiChu());
 
-            boolean thanhCong = themSuKienNhaVanhoaRecord.execute();
+            boolean thanhCong = themSuKienNhaVanHoaRecord.execute();
             return thanhCong;
         }catch(SQLException e){
             e.printStackTrace();
@@ -80,8 +100,8 @@ public class canBoNhaVanHoa_controller {
     {
         try{
             String sqlInsertInToXoaCoSoNhaVanHoa = "DELETE FROM co_so_nha_van_hoa WHERE idDoDung = " + idCoSoCanXoa + ";";
-            PreparedStatement xoaCoSoNhaVanhoaRecord = connectDB.prepareStatement(sqlInsertInToXoaCoSoNhaVanHoa);
-            boolean thanhCong = xoaCoSoNhaVanhoaRecord.execute();
+            PreparedStatement xoaCoSoNhaVanHoaRecord = connectDB.prepareStatement(sqlInsertInToXoaCoSoNhaVanHoa);
+            boolean thanhCong = xoaCoSoNhaVanHoaRecord.execute();
             return thanhCong;
         }catch(SQLException e){
             e.printStackTrace();

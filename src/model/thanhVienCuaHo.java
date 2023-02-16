@@ -1,42 +1,42 @@
 package model;
 
 public class thanhVienCuaHo {
-    private int id;
-    private int idNhanKhau;
-    private int idHoKhau;
+    private Integer id;
+    private Integer idNhanKhau;
+    private Integer idHoKhau;
     private String quanHeVoiChuHo;
 
     public thanhVienCuaHo() {
     }
 
-    public thanhVienCuaHo(int id, int idNhanKhau, int idHoKhau, String quanHeVoiChuHo) {
+    public thanhVienCuaHo(Integer id, Integer idNhanKhau, Integer idHoKhau, String quanHeVoiChuHo) {
         this.id = id;
         this.idNhanKhau = idNhanKhau;
         this.idHoKhau = idHoKhau;
         this.quanHeVoiChuHo = quanHeVoiChuHo;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getIdNhanKhau() {
+    public Integer getIdNhanKhau() {
         return idNhanKhau;
     }
 
-    public void setIdNhanKhau(int idNhanKhau) {
+    public void setIdNhanKhau(Integer idNhanKhau) {
         this.idNhanKhau = idNhanKhau;
     }
 
-    public int getIdHoKhau() {
+    public Integer getIdHoKhau() {
         return idHoKhau;
     }
 
-    public void setIdHoKhau(int idHoKhau) {
+    public void setIdHoKhau(Integer idHoKhau) {
         this.idHoKhau = idHoKhau;
     }
 

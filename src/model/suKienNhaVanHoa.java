@@ -3,16 +3,16 @@ package model;
 import java.sql.Date;
 
 public class suKienNhaVanHoa {
-    private int idSuKien;
+    private Integer idSuKien;
     private Date ngayToChuc;
     private String loaiSuKien;
-    private int phiSuDung;
+    private Integer phiSuDung;
     private String ghiChu;
 
     public suKienNhaVanHoa() {
     }
 
-    public suKienNhaVanHoa(int idSuKien, Date ngayToChuc, String loaiSuKien, int phiSuDung, String ghiChu) {
+    public suKienNhaVanHoa(Integer idSuKien, Date ngayToChuc, String loaiSuKien, Integer phiSuDung, String ghiChu) {
         this.idSuKien = idSuKien;
         this.ngayToChuc = ngayToChuc;
         this.loaiSuKien = loaiSuKien;
@@ -20,11 +20,11 @@ public class suKienNhaVanHoa {
         this.ghiChu = ghiChu;
     }
 
-    public int getIdSuKien() {
+    public Integer getIdSuKien() {
         return idSuKien;
     }
 
-    public void setIdSuKien(int idSuKien) {
+    public void setIdSuKien(Integer idSuKien) {
         this.idSuKien = idSuKien;
     }
 
@@ -44,11 +44,11 @@ public class suKienNhaVanHoa {
         this.loaiSuKien = loaiSuKien;
     }
 
-    public int getPhiSuDung() {
+    public Integer getPhiSuDung() {
         return phiSuDung;
     }
 
-    public void setPhiSuDung(int phiSuDung) {
+    public void setPhiSuDung(Integer phiSuDung) {
         this.phiSuDung = phiSuDung;
     }
 

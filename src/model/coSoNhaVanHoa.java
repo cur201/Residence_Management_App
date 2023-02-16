@@ -1,16 +1,16 @@
 package model;
 
 public class coSoNhaVanHoa {
-    private int idDoDung;
+    private Integer idDoDung;
     private String tenDoDung;
     private String hienTrang;
-    private int soLuong;
+    private Integer soLuong;
     private String ghiChu;
 
     public coSoNhaVanHoa() {
     }
 
-    public coSoNhaVanHoa(int idDoDung, String tenDoDung, String hienTrang, int soLuong, String ghiChu) {
+    public coSoNhaVanHoa(Integer idDoDung, String tenDoDung, String hienTrang, Integer soLuong, String ghiChu) {
         this.idDoDung = idDoDung;
         this.tenDoDung = tenDoDung;
         this.hienTrang = hienTrang;
@@ -18,11 +18,11 @@ public class coSoNhaVanHoa {
         this.ghiChu = ghiChu;
     }
 
-    public int getIdDoDung() {
+    public Integer getIdDoDung() {
         return idDoDung;
     }
 
-    public void setIdDoDung(int idDoDung) {
+    public void setIdDoDung(Integer idDoDung) {
         this.idDoDung = idDoDung;
     }
 
@@ -42,11 +42,11 @@ public class coSoNhaVanHoa {
         this.hienTrang = hienTrang;
     }
 
-    public int getSoLuong() {
+    public Integer getSoLuong() {
         return soLuong;
     }
 
-    public void setSoLuong(int soLuong) {
+    public void setSoLuong(Integer soLuong) {
         this.soLuong = soLuong;
     }
 

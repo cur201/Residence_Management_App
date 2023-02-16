@@ -3,15 +3,15 @@ package model;
 import java.sql.Date;
 
 public class dangKyThemNhanKhau {
-    private int idGiayDangKyThemNhanKhau;
-    private int idNguoiKhai;
+    private Integer idGiayDangKyThemNhanKhau;
+    private Integer idNguoiKhai;
     private Date ngayKhai;
     private String hoTen;
     private String bietDanh;
-    private int soCMT;
+    private Integer soCMT;
     private Date ngayCapCMT;
     private String noiCapCMT;
-    private int namSinh;
+    private Integer namSinh;
     private String gioiTinh;
     private String noiSinh;
     private String danToc;
@@ -29,8 +29,8 @@ public class dangKyThemNhanKhau {
     public dangKyThemNhanKhau() {
     }
 
-    public dangKyThemNhanKhau(int idGiayDangKyThemNhanKhau, int idNguoiKhai, Date ngayKhai, String hoTen,
-                              String bietDanh, int soCMT, Date ngayCapCMT, String noiCapCMT, int namSinh,
+    public dangKyThemNhanKhau(Integer idGiayDangKyThemNhanKhau, Integer idNguoiKhai, Date ngayKhai, String hoTen,
+                              String bietDanh, Integer soCMT, Date ngayCapCMT, String noiCapCMT, Integer namSinh,
                               String gioiTinh, String noiSinh, String danToc, String tonGiao, String quocTich,
                               String nguyenQuan, String noiThuongTru, String ngheNghiep, String noiLamViec,
                               Date ngayDangKyThuongTru, boolean trangThaiTamTru, boolean trangThaiTamVang,
@@ -59,19 +59,19 @@ public class dangKyThemNhanKhau {
         this.ghiChu = ghiChu;
     }
 
-    public int getIdGiayDangKyThemNhanKhau() {
+    public Integer getIdGiayDangKyThemNhanKhau() {
         return idGiayDangKyThemNhanKhau;
     }
 
-    public void setIdGiayDangKyThemNhanKhau(int idGiayDangKyThemNhanKhau) {
+    public void setIdGiayDangKyThemNhanKhau(Integer idGiayDangKyThemNhanKhau) {
         this.idGiayDangKyThemNhanKhau = idGiayDangKyThemNhanKhau;
     }
 
-    public int getIdNguoiKhai() {
+    public Integer getIdNguoiKhai() {
         return idNguoiKhai;
     }
 
-    public void setIdNguoiKhai(int idNguoiKhai) {
+    public void setIdNguoiKhai(Integer idNguoiKhai) {
         this.idNguoiKhai = idNguoiKhai;
     }
 
@@ -99,11 +99,11 @@ public class dangKyThemNhanKhau {
         this.bietDanh = bietDanh;
     }
 
-    public int getSoCMT() {
+    public Integer getSoCMT() {
         return soCMT;
     }
 
-    public void setSoCMT(int soCMT) {
+    public void setSoCMT(Integer soCMT) {
         this.soCMT = soCMT;
     }
 
@@ -123,11 +123,11 @@ public class dangKyThemNhanKhau {
         this.noiCapCMT = noiCapCMT;
     }
 
-    public int getNamSinh() {
+    public Integer getNamSinh() {
         return namSinh;
     }
 
-    public void setNamSinh(int namSinh) {
+    public void setNamSinh(Integer namSinh) {
         this.namSinh = namSinh;
     }
 

@@ -3,8 +3,8 @@ package model;
 import java.sql.Date;
 
 public class tamTru {
-    private int idGiayTamTru;
-    private int idNhanKhau;
+    private Integer idGiayTamTru;
+    private Integer idNhanKhau;
     private String noiTamTru;
     private String noiThuongTru;
     private Date tuNgay;
@@ -13,7 +13,7 @@ public class tamTru {
     public tamTru() {
     }
 
-    public tamTru(int idGiayTamTru, int idNhanKhau, String noiTamTru, String noiThuongTru, Date tuNgay, Date denNgay, String lyDo) {
+    public tamTru(Integer idGiayTamTru, Integer idNhanKhau, String noiTamTru, String noiThuongTru, Date tuNgay, Date denNgay, String lyDo) {
         this.idGiayTamTru = idGiayTamTru;
         this.idNhanKhau = idNhanKhau;
         this.noiTamTru = noiTamTru;
@@ -23,19 +23,19 @@ public class tamTru {
         this.lyDo = lyDo;
     }
 
-    public int getIdGiayTamTru() {
+    public Integer getIdGiayTamTru() {
         return idGiayTamTru;
     }
 
-    public void setIdGiayTamTru(int idGiayTamTru) {
+    public void setIdGiayTamTru(Integer idGiayTamTru) {
         this.idGiayTamTru = idGiayTamTru;
     }
 
-    public int getIdNhanKhau() {
+    public Integer getIdNhanKhau() {
         return idNhanKhau;
     }
 
-    public void setIdNhanKhau(int idNhanKhau) {
+    public void setIdNhanKhau(Integer idNhanKhau) {
         this.idNhanKhau = idNhanKhau;
     }
 

@@ -3,16 +3,16 @@ package model;
 import java.sql.Date;
 
 public class dangKySuDungNhaVanHoa {
-    private int idGiayDangKy;
+    private Integer idGiayDangKy;
     private Date ngayToChuc;
     private String loaiSuKien;
-    private int phiSuDung;
+    private Integer phiSuDung;
     private String ghiChu;
 
     public dangKySuDungNhaVanHoa() {
     }
 
-    public dangKySuDungNhaVanHoa(int idGiayDangKy, Date ngayToChuc, String loaiSuKien, int phiSuDung, String ghiChu) {
+    public dangKySuDungNhaVanHoa(Integer idGiayDangKy, Date ngayToChuc, String loaiSuKien, Integer phiSuDung, String ghiChu) {
         this.idGiayDangKy = idGiayDangKy;
         this.ngayToChuc = ngayToChuc;
         this.loaiSuKien = loaiSuKien;
@@ -20,11 +20,11 @@ public class dangKySuDungNhaVanHoa {
         this.ghiChu = ghiChu;
     }
 
-    public int getIdGiayDangKy() {
+    public Integer getIdGiayDangKy() {
         return idGiayDangKy;
     }
 
-    public void setIdGiayDangKy(int idGiayDangKy) {
+    public void setIdGiayDangKy(Integer idGiayDangKy) {
         this.idGiayDangKy = idGiayDangKy;
     }
 
@@ -44,11 +44,11 @@ public class dangKySuDungNhaVanHoa {
         this.loaiSuKien = loaiSuKien;
     }
 
-    public int getPhiSuDung() {
+    public Integer getPhiSuDung() {
         return phiSuDung;
     }
 
-    public void setPhiSuDung(int phiSuDung) {
+    public void setPhiSuDung(Integer phiSuDung) {
         this.phiSuDung = phiSuDung;
     }
 

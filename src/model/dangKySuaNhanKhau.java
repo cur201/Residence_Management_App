@@ -3,16 +3,16 @@ package model;
 import java.sql.Date;
 
 public class dangKySuaNhanKhau {
-    private int idGiayDangKySuaNhanKhau;
-    private int idNguoiKhai;
-    private int idNguoiDuocSua;
+    private Integer idGiayDangKySuaNhanKhau;
+    private Integer idNguoiKhai;
+    private Integer idNguoiDuocSua;
     private Date ngayKhai;
     private String hoTenMoi;
     private String bietDanhMoi;
-    private int soCMTMoi;
+    private Integer soCMTMoi;
     private Date ngayCapCMT;
     private String noiCapCMT;
-    private int namSinhMoi;
+    private Integer namSinhMoi;
     private String gioiTinhMoi;
     private String noiSinhMoi;
     private String danTocMoi;
@@ -30,9 +30,9 @@ public class dangKySuaNhanKhau {
     public dangKySuaNhanKhau() {
     }
 
-    public dangKySuaNhanKhau(int idGiayDangKySuaNhanKhau, int idNguoiKhai, int idNguoiDuocSua, Date ngayKhai,
-                             String hoTenMoi, String bietDanhMoi, int soCMTMoi, Date ngayCapCMT, String noiCapCMT,
-                             int namSinhMoi, String gioiTinhMoi, String noiSinhMoi, String danTocMoi, String tonGiaoMoi,
+    public dangKySuaNhanKhau(Integer idGiayDangKySuaNhanKhau, Integer idNguoiKhai, Integer idNguoiDuocSua, Date ngayKhai,
+                             String hoTenMoi, String bietDanhMoi, Integer soCMTMoi, Date ngayCapCMT, String noiCapCMT,
+                             Integer namSinhMoi, String gioiTinhMoi, String noiSinhMoi, String danTocMoi, String tonGiaoMoi,
                              String quocTichMoi, String nguyenQuanMoi, String noiThuongTruMoi, String ngheNghiepMoi,
                              String noiLamViecMoi, Date ngayDangKyThuongTruMoi, boolean tamTruMoi, boolean tamVangMoi,
                              String ghiChuMoi) {
@@ -61,27 +61,27 @@ public class dangKySuaNhanKhau {
         this.ghiChuMoi = ghiChuMoi;
     }
 
-    public int getIdGiayDangKySuaNhanKhau() {
+    public Integer getIdGiayDangKySuaNhanKhau() {
         return idGiayDangKySuaNhanKhau;
     }
 
-    public void setIdGiayDangKySuaNhanKhau(int idGiayDangKySuaNhanKhau) {
+    public void setIdGiayDangKySuaNhanKhau(Integer idGiayDangKySuaNhanKhau) {
         this.idGiayDangKySuaNhanKhau = idGiayDangKySuaNhanKhau;
     }
 
-    public int getIdNguoiKhai() {
+    public Integer getIdNguoiKhai() {
         return idNguoiKhai;
     }
 
-    public void setIdNguoiKhai(int idNguoiKhai) {
+    public void setIdNguoiKhai(Integer idNguoiKhai) {
         this.idNguoiKhai = idNguoiKhai;
     }
 
-    public int getIdNguoiDuocSua() {
+    public Integer getIdNguoiDuocSua() {
         return idNguoiDuocSua;
     }
 
-    public void setIdNguoiDuocSua(int idNguoiDuocSua) {
+    public void setIdNguoiDuocSua(Integer idNguoiDuocSua) {
         this.idNguoiDuocSua = idNguoiDuocSua;
     }
 
@@ -109,11 +109,11 @@ public class dangKySuaNhanKhau {
         this.bietDanhMoi = bietDanhMoi;
     }
 
-    public int getSoCMTMoi() {
+    public Integer getSoCMTMoi() {
         return soCMTMoi;
     }
 
-    public void setSoCMTMoi(int soCMTMoi) {
+    public void setSoCMTMoi(Integer soCMTMoi) {
         this.soCMTMoi = soCMTMoi;
     }
 
@@ -133,11 +133,11 @@ public class dangKySuaNhanKhau {
         this.noiCapCMT = noiCapCMT;
     }
 
-    public int getNamSinhMoi() {
+    public Integer getNamSinhMoi() {
         return namSinhMoi;
     }
 
-    public void setNamSinhMoi(int namSinhMoi) {
+    public void setNamSinhMoi(Integer namSinhMoi) {
         this.namSinhMoi = namSinhMoi;
     }
 

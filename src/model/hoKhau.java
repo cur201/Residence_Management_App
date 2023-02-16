@@ -3,8 +3,8 @@ package model;
 import java.sql.Date;
 
 public class hoKhau {
-    private int idHoKhau;
-    private int idChuHo;
+    private Integer idHoKhau;
+    private Integer idChuHo;
     private String maKhuVuc;
     private String diaChi;
     private Date ngayLap;
@@ -12,7 +12,7 @@ public class hoKhau {
     public hoKhau() {
     }
 
-    public hoKhau(int idHoKhau, int idChuHo, String maKhuVuc, String diaChi, Date ngayLap) {
+    public hoKhau(Integer idHoKhau, Integer idChuHo, String maKhuVuc, String diaChi, Date ngayLap) {
         this.idHoKhau = idHoKhau;
         this.idChuHo = idChuHo;
         this.maKhuVuc = maKhuVuc;
@@ -20,19 +20,19 @@ public class hoKhau {
         this.ngayLap = ngayLap;
     }
 
-    public int getIdHoKhau() {
+    public Integer getIdHoKhau() {
         return idHoKhau;
     }
 
-    public void setIdHoKhau(int idHoKhau) {
+    public void setIdHoKhau(Integer idHoKhau) {
         this.idHoKhau = idHoKhau;
     }
 
-    public int getIdChuHo() {
+    public Integer getIdChuHo() {
         return idChuHo;
     }
 
-    public void setIdChuHo(int idChuHo) {
+    public void setIdChuHo(Integer idChuHo) {
         this.idChuHo = idChuHo;
     }
 

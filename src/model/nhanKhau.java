@@ -3,13 +3,13 @@ package model;
 import java.sql.Date;
 
 public class nhanKhau {
-    private int idNhanKhau;
+    private Integer idNhanKhau;
     private String hoTen;
     private String bietDanh;
-    private int soCMT;
+    private Integer soCMT;
     private Date ngayCapCMT;
     private String noiCapCMT;
-    private int namSinh;
+    private Integer namSinh;
     private String gioiTinh;
     private String noiSinh;
     private String danToc;
@@ -27,8 +27,8 @@ public class nhanKhau {
     public nhanKhau() {
     }
 
-    public nhanKhau(int idNhanKhau, String hoTen, String bietDanh, int soCMT, Date ngayCapCMT, String noiCapCMT,
-                    int namSinh, String gioiTinh, String noiSinh, String danToc, String tonGiao, String quocTich,
+    public nhanKhau(Integer idNhanKhau, String hoTen, String bietDanh, Integer soCMT, Date ngayCapCMT, String noiCapCMT,
+                    Integer namSinh, String gioiTinh, String noiSinh, String danToc, String tonGiao, String quocTich,
                     String nguyenQuan, String noiThuongTru, String ngheNghiep, String noiLamViec,
                     Date ngayDangKyThuongTru, boolean trangThaiTamTru, boolean trangThaiTamVang, String ghiChu) {
         this.idNhanKhau = idNhanKhau;
@@ -53,11 +53,11 @@ public class nhanKhau {
         this.ghiChu = ghiChu;
     }
 
-    public int getIdNhanKhau() {
+    public Integer getIdNhanKhau() {
         return idNhanKhau;
     }
 
-    public void setIdNhanKhau(int idNhanKhau) {
+    public void setIdNhanKhau(Integer idNhanKhau) {
         this.idNhanKhau = idNhanKhau;
     }
 
@@ -77,11 +77,11 @@ public class nhanKhau {
         this.bietDanh = bietDanh;
     }
 
-    public int getSoCMT() {
+    public Integer getSoCMT() {
         return soCMT;
     }
 
-    public void setSoCMT(int soCMT) {
+    public void setSoCMT(Integer soCMT) {
         this.soCMT = soCMT;
     }
 
@@ -101,11 +101,11 @@ public class nhanKhau {
         this.noiCapCMT = noiCapCMT;
     }
 
-    public int getNamSinh() {
+    public Integer getNamSinh() {
         return namSinh;
     }
 
-    public void setNamSinh(int namSinh) {
+    public void setNamSinh(Integer namSinh) {
         this.namSinh = namSinh;
     }
 

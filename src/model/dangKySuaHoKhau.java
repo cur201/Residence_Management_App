@@ -3,17 +3,17 @@ package model;
 import java.sql.Date;
 
 public class dangKySuaHoKhau {
-    private int idGiayDangKySuaHoKhau;
-    private int idHoKhau;
-    private int idChuHoMoi;
+    private Integer idGiayDangKySuaHoKhau;
+    private Integer idHoKhau;
+    private Integer idChuHoMoi;
     private String diaChiMoi;
     private Date ngayThayDoi;
-    private int idNguoiKhai;
+    private Integer idNguoiKhai;
 
     public dangKySuaHoKhau() {
     }
 
-    public dangKySuaHoKhau(int idGiayDangKySuaHoKhau, int idHoKhau, int idChuHoMoi, String diaChiMoi, Date ngayThayDoi, int idNguoiKhai) {
+    public dangKySuaHoKhau(Integer idGiayDangKySuaHoKhau, Integer idHoKhau, Integer idChuHoMoi, String diaChiMoi, Date ngayThayDoi, Integer idNguoiKhai) {
         this.idGiayDangKySuaHoKhau = idGiayDangKySuaHoKhau;
         this.idHoKhau = idHoKhau;
         this.idChuHoMoi = idChuHoMoi;
@@ -22,27 +22,27 @@ public class dangKySuaHoKhau {
         this.idNguoiKhai = idNguoiKhai;
     }
 
-    public int getIdGiayDangKySuaHoKhau() {
+    public Integer getIdGiayDangKySuaHoKhau() {
         return idGiayDangKySuaHoKhau;
     }
 
-    public void setIdGiayDangKySuaHoKhau(int idGiayDangKySuaHoKhau) {
+    public void setIdGiayDangKySuaHoKhau(Integer idGiayDangKySuaHoKhau) {
         this.idGiayDangKySuaHoKhau = idGiayDangKySuaHoKhau;
     }
 
-    public int getIdHoKhau() {
+    public Integer getIdHoKhau() {
         return idHoKhau;
     }
 
-    public void setIdHoKhau(int idHoKhau) {
+    public void setIdHoKhau(Integer idHoKhau) {
         this.idHoKhau = idHoKhau;
     }
 
-    public int getIdChuHoMoi() {
+    public Integer getIdChuHoMoi() {
         return idChuHoMoi;
     }
 
-    public void setIdChuHoMoi(int idChuHoMoi) {
+    public void setIdChuHoMoi(Integer idChuHoMoi) {
         this.idChuHoMoi = idChuHoMoi;
     }
 
@@ -62,11 +62,11 @@ public class dangKySuaHoKhau {
         this.ngayThayDoi = ngayThayDoi;
     }
 
-    public int getIdNguoiKhai() {
+    public Integer getIdNguoiKhai() {
         return idNguoiKhai;
     }
 
-    public void setIdNguoiKhai(int idNguoiKhai) {
+    public void setIdNguoiKhai(Integer idNguoiKhai) {
         this.idNguoiKhai = idNguoiKhai;
     }
 }

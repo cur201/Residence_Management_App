@@ -3,16 +3,16 @@ package model;
 import java.sql.Date;
 
 public class dangKyXoaHoKhau {
-    private int idGiayDangKyXoaHoKhau;
-    private int idHoKhau;
+    private Integer idGiayDangKyXoaHoKhau;
+    private Integer idHoKhau;
     private String lyDo;
     private Date ngayKhai;
-    private int idNguoiKhai;
+    private Integer idNguoiKhai;
 
     public dangKyXoaHoKhau() {
     }
 
-    public dangKyXoaHoKhau(int idGiayDangKyXoaHoKhau, int idHoKhau, String lyDo, Date ngayKhai, int idNguoiKhai) {
+    public dangKyXoaHoKhau(Integer idGiayDangKyXoaHoKhau, Integer idHoKhau, String lyDo, Date ngayKhai, Integer idNguoiKhai) {
         this.idGiayDangKyXoaHoKhau = idGiayDangKyXoaHoKhau;
         this.idHoKhau = idHoKhau;
         this.lyDo = lyDo;
@@ -20,19 +20,19 @@ public class dangKyXoaHoKhau {
         this.idNguoiKhai = idNguoiKhai;
     }
 
-    public int getIdGiayDangKyXoaHoKhau() {
+    public Integer getIdGiayDangKyXoaHoKhau() {
         return idGiayDangKyXoaHoKhau;
     }
 
-    public void setIdGiayDangKyXoaHoKhau(int idGiayDangKyXoaHoKhau) {
+    public void setIdGiayDangKyXoaHoKhau(Integer idGiayDangKyXoaHoKhau) {
         this.idGiayDangKyXoaHoKhau = idGiayDangKyXoaHoKhau;
     }
 
-    public int getIdHoKhau() {
+    public Integer getIdHoKhau() {
         return idHoKhau;
     }
 
-    public void setIdHoKhau(int idHoKhau) {
+    public void setIdHoKhau(Integer idHoKhau) {
         this.idHoKhau = idHoKhau;
     }
 
@@ -52,11 +52,11 @@ public class dangKyXoaHoKhau {
         this.ngayKhai = ngayKhai;
     }
 
-    public int getIdNguoiKhai() {
+    public Integer getIdNguoiKhai() {
         return idNguoiKhai;
     }
 
-    public void setIdNguoiKhai(int idNguoiKhai) {
+    public void setIdNguoiKhai(Integer idNguoiKhai) {
         this.idNguoiKhai = idNguoiKhai;
     }
 }
