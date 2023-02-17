@@ -177,10 +177,10 @@ public class controllerTest {
         //-----------------------------tổ trưởng test---------------------------//
 
             //thống kê nhân khẩu
-        String category="hoten";
-        String categoryValue = "Duong";
+//        String category="hoten";
+//        String categoryValue = "Duong";
         toTruongController toTruongController = new toTruongController();
-        ArrayList<nhanKhau> dsNhanKhau = toTruongController.thongKeNhanKhau(category, categoryValue);
+        ArrayList<nhanKhau> dsNhanKhau = toTruongController.thongKeNhanKhau();
 
         for(nhanKhau nk: dsNhanKhau)
         {

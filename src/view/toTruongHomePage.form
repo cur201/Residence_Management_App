@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="view.toTruongHomePage">
-  <grid id="27dc6" binding="toTruongHomePagePanel" layout-manager="GridLayoutManager" row-count="2" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="toTruongHomePagePanel" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="700" height="500"/>
@@ -16,7 +16,7 @@
       <grid id="e6d1e" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="20" bottom="0" right="10"/>
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-789517"/>
@@ -50,32 +50,487 @@
           </component>
         </children>
       </grid>
-      <grid id="d3df1" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
+      <grid id="d3df1" binding="parentPanelToTruong" layout-manager="CardLayout" hgap="0" vgap="0">
         <constraints>
-          <grid row="1" column="2" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-789517"/>
         </properties>
         <border type="none"/>
         <children>
-          <component id="64d3a" class="javax.swing.JList" binding="list1" default-binding="true">
+          <grid id="8e792" binding="thongKeNhanKhauPanel" layout-manager="CardLayout" hgap="0" vgap="0">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="50"/>
-              </grid>
+              <card name="Card1"/>
             </constraints>
             <properties>
-              <background color="-983297"/>
+              <background color="-789517"/>
             </properties>
-          </component>
+            <border type="none"/>
+            <children>
+              <component id="58b7" class="javax.swing.JTable" binding="tblThongKeNhanKhau">
+                <constraints>
+                  <card name="Card1"/>
+                </constraints>
+                <properties/>
+              </component>
+            </children>
+          </grid>
+          <grid id="351a5" binding="lichSuThayDoiNhanKhauPanel" layout-manager="CardLayout" hgap="0" vgap="0">
+            <constraints>
+              <card name="Card2"/>
+            </constraints>
+            <properties>
+              <background color="-789517"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="fad91" class="javax.swing.JTable" binding="tblLichSuThayDoiNhanKhau">
+                <constraints>
+                  <card name="Card1"/>
+                </constraints>
+                <properties/>
+              </component>
+            </children>
+          </grid>
+          <grid id="d8946" binding="duyetYeuCauPanel" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <card name="Card3"/>
+            </constraints>
+            <properties>
+              <background color="-789517"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="66ac2" class="javax.swing.JButton" binding="btnDuyetYeuCauSuKien">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt yêu cầu sự kiện"/>
+                </properties>
+              </component>
+              <component id="46667" class="javax.swing.JButton" binding="btnDuyetYeuCauHoKhau">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt yêu cầu Hộ Khẩu"/>
+                </properties>
+              </component>
+              <component id="61520" class="javax.swing.JButton" binding="btnDuyetYeuCauNhanKhau">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt yêu cầu Nhân Khẩu"/>
+                </properties>
+              </component>
+              <component id="79432" class="javax.swing.JButton" binding="btnDuyetYeuCauTamVang">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt yêu cầu tạm vắng"/>
+                </properties>
+              </component>
+              <component id="a10b3" class="javax.swing.JButton" binding="btnDuyetYeuCauTamTru">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt yêu cầu tạm trú"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="49984" binding="duyetYeuCauNhanKhauPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <card name="Card6"/>
+            </constraints>
+            <properties>
+              <background color="-789517"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="58cc8" class="javax.swing.JButton" binding="btnDuyetXoaNhanKhau">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt yêu cầu xóa nhân khẩu"/>
+                </properties>
+              </component>
+              <component id="9f5e6" class="javax.swing.JButton" binding="btnDuyetThemNhanKhau">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt yêu cầu thêm Nhân Khẩu"/>
+                </properties>
+              </component>
+              <component id="6d980" class="javax.swing.JButton" binding="btnDuyetSuaNhanKhau">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt yêu cầu sửa Nhân Khẩu"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="f4184" binding="duyetYeuCauHoKhauPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <card name="Card7"/>
+            </constraints>
+            <properties>
+              <background color="-789517"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="5e681" class="javax.swing.JButton" binding="btnDuyetXoaHoKhau">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt yêu cầu xóa Hộ Khẩu"/>
+                </properties>
+              </component>
+              <component id="a8b67" class="javax.swing.JButton" binding="btnDuyetThemHoKhau">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt yêu cầu thêm Hộ Khẩu"/>
+                </properties>
+              </component>
+              <component id="dbcc6" class="javax.swing.JButton" binding="btnDuyetSuaHoKhau">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt yêu cầu sửa Hộ Khẩu"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="d8ac1" binding="duyetYeuCauSuKienPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <card name="Card4"/>
+            </constraints>
+            <properties>
+              <background color="-789517"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="425a0" class="javax.swing.JTable" binding="tblDuyetSuKien">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="c0301" class="javax.swing.JButton" binding="btnTuChoiYeuCauSuKien">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Từ chối"/>
+                </properties>
+              </component>
+              <component id="9f42e" class="javax.swing.JButton" binding="btnXacNhanYeuCauSuKien">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="3937c" binding="duyetXoaNhanKhauPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <card name="Card5"/>
+            </constraints>
+            <properties>
+              <background color="-789517"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="50a55" class="javax.swing.JTable" binding="tblDuyetXoaNhanKhau">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="8dc6c" class="javax.swing.JButton" binding="btnTuChoiXoaNhanKhau">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Từ chối"/>
+                </properties>
+              </component>
+              <component id="1866" class="javax.swing.JButton" binding="btnXacNhanXoaNhanKhau">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="faaf3" binding="duyetThemNhanKhauPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <card name="Card8"/>
+            </constraints>
+            <properties>
+              <background color="-789517"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="2ef24" class="javax.swing.JTable" binding="tblDuyetThemNhanKhau">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="1f587" class="javax.swing.JButton" binding="btnTuChoiThemNhanKhau">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Từ chối"/>
+                </properties>
+              </component>
+              <component id="4313f" class="javax.swing.JButton" binding="btnXacNhanThemNhanKhau">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="c1294" binding="duyetSuaNhanKhauPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <card name="Card9"/>
+            </constraints>
+            <properties>
+              <background color="-789517"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="d3497" class="javax.swing.JTable" binding="tblDuyetSuaNhanKhau">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="32013" class="javax.swing.JButton" binding="btnTuChoiSuaNhanKhau">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Từ chối"/>
+                </properties>
+              </component>
+              <component id="e30ed" class="javax.swing.JButton" binding="btnXacNhanSuaNhanKhau">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="5d7ee" binding="duyetXoaHoKhauPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <card name="Card10"/>
+            </constraints>
+            <properties>
+              <background color="-789517"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="412db" class="javax.swing.JTable" binding="tblDuyetXoaHoKhau">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="939b6" class="javax.swing.JButton" binding="btnTuChoiXoaHoKhau">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Từ chối"/>
+                </properties>
+              </component>
+              <component id="e886b" class="javax.swing.JButton" binding="btnXacNhanXoaHoKhau">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="9aa36" binding="duyetThemHoKhauPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <card name="Card11"/>
+            </constraints>
+            <properties>
+              <background color="-789517"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="3e05a" class="javax.swing.JTable" binding="tblDuyetThemHoKhau">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="ed7cd" class="javax.swing.JButton" binding="btnTuChoiThemHoKhau">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Từ chối"/>
+                </properties>
+              </component>
+              <component id="e85e4" class="javax.swing.JButton" binding="btnXacNhanThemHoKhau">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="9f4e8" binding="duyetSuaHoKhauPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <card name="Card12"/>
+            </constraints>
+            <properties>
+              <background color="-789517"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="de932" class="javax.swing.JTable" binding="tblDuyetSuaHoKhau">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="cc544" class="javax.swing.JButton" binding="btnTuChoiSuaHoKhau">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Từ chối"/>
+                </properties>
+              </component>
+              <component id="8beb8" class="javax.swing.JButton" binding="btnXacNhanSuaHoKhau">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="ad3ef" binding="duyetTamTruPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <card name="Card13"/>
+            </constraints>
+            <properties>
+              <background color="-789517"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="dffb3" class="javax.swing.JTable" binding="tblDuyetTamTru">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="400e4" class="javax.swing.JButton" binding="btnTuChoiTamTru">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Từ Chối"/>
+                </properties>
+              </component>
+              <component id="5edd4" class="javax.swing.JButton" binding="btnXacNhanTamTru">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="d9348" binding="duyetTamVangPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <card name="Card14"/>
+            </constraints>
+            <properties>
+              <background color="-789517"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="b6210" class="javax.swing.JButton" binding="btnTuChoiTamVang">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Từ chối"/>
+                </properties>
+              </component>
+              <component id="a9da0" class="javax.swing.JButton" binding="btnXacNhanTamVang">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Duyệt"/>
+                </properties>
+              </component>
+              <component id="84b6" class="javax.swing.JTable" binding="tblDuyetTamVang">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+            </children>
+          </grid>
         </children>
       </grid>
-      <grid id="9d802" layout-manager="GridLayoutManager" row-count="10" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="9d802" layout-manager="GridLayoutManager" row-count="9" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="10" bottom="0" right="10"/>
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="224" height="264"/>
+          </grid>
         </constraints>
         <properties>
           <background color="-789517"/>
@@ -84,7 +539,7 @@
         <children>
           <component id="962e3" class="javax.swing.JTextField" binding="txtSearchKeyword">
             <constraints>
-              <grid row="0" column="0" row-span="3" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+              <grid row="0" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
@@ -95,7 +550,7 @@
           </component>
           <component id="ca192" class="javax.swing.JButton" binding="btnThongKeNhanKhau">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-786945"/>
@@ -105,7 +560,7 @@
           </component>
           <component id="87495" class="javax.swing.JButton" binding="btnLichSu">
             <constraints>
-              <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-786945"/>
@@ -115,7 +570,7 @@
           </component>
           <component id="8b9d6" class="javax.swing.JButton" binding="btnDuyetYeuCau">
             <constraints>
-              <grid row="8" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-4473925"/>
@@ -125,7 +580,7 @@
           </component>
           <component id="6e879" class="javax.swing.JComboBox" binding="txtType">
             <constraints>
-              <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font name="JetBrains Mono"/>
@@ -133,7 +588,7 @@
           </component>
           <component id="d9883" class="javax.swing.JButton" binding="btnSearch">
             <constraints>
-              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-786945"/>
@@ -143,22 +598,22 @@
           </component>
           <vspacer id="941d4">
             <constraints>
-              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
           <vspacer id="222cd">
             <constraints>
-              <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
           <vspacer id="26c8">
             <constraints>
-              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
           <vspacer id="3fa9">
             <constraints>
-              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
         </children>

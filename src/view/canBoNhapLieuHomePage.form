@@ -67,7 +67,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <grid id="2cbab" binding="hoKhauPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="2cbab" binding="hoKhauPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <card name="Card1"/>
@@ -94,17 +94,9 @@
                   <text value="Đăng ký sửa thông tin hộ khẩu"/>
                 </properties>
               </component>
-              <component id="dd151" class="javax.swing.JButton" binding="btnDKXoaHoKhau">
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Đăng ký xóa hộ khẩu"/>
-                </properties>
-              </component>
             </children>
           </grid>
-          <grid id="61bbd" binding="nhanKhauPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="61bbd" binding="nhanKhauPanel" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <card name="Card2"/>
@@ -139,6 +131,14 @@
                   <text value="Đăng ký xóa nhân khẩu"/>
                 </properties>
               </component>
+              <component id="dd151" class="javax.swing.JButton" binding="btnDKXoaHoKhau">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Đăng ký xóa hộ khẩu"/>
+                </properties>
+              </component>
             </children>
           </grid>
           <grid id="c4ff5" binding="tamTruPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -162,28 +162,7 @@
               </component>
             </children>
           </grid>
-          <grid id="77971" binding="tamVangPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <card name="Card4"/>
-            </constraints>
-            <properties>
-              <background color="-789517"/>
-              <foreground color="-789517"/>
-            </properties>
-            <border type="none"/>
-            <children>
-              <component id="9cdac" class="javax.swing.JButton" binding="btnDKTamVang">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Đăng ký tạm vắng"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <grid id="1a67c" binding="nhaVanHoaPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="1a67c" binding="nhaVanHoaPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <card name="Card5"/>
@@ -202,6 +181,27 @@
                   <text value="Đăng ký sử dụng nhà văn hóa"/>
                 </properties>
               </component>
+              <grid id="77971" binding="tamVangPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-789517"/>
+                  <foreground color="-789517"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="9cdac" class="javax.swing.JButton" binding="btnDKTamVang">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="Đăng ký tạm vắng"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
             </children>
           </grid>
           <grid id="75336" binding="formThemNhanKhauPanel" layout-manager="GridLayoutManager" row-count="22" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">

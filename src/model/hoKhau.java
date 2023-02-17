@@ -1,6 +1,8 @@
 package model;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class hoKhau {
     private int idHoKhau;
@@ -9,7 +11,10 @@ public class hoKhau {
     private String diaChi;
     private Date ngayLap;
 
+    private List<String> hoKhauList;
+
     public hoKhau() {
+        hoKhauList = new ArrayList<>();
     }
 
     public hoKhau(int idHoKhau, int idChuHo, String maKhuVuc, String diaChi, Date ngayLap) {
@@ -18,7 +23,10 @@ public class hoKhau {
         this.maKhuVuc = maKhuVuc;
         this.diaChi = diaChi;
         this.ngayLap = ngayLap;
+        hoKhauList = new ArrayList<>();
+
     }
+
 
     public int getIdHoKhau() {
         return idHoKhau;
@@ -59,4 +67,6 @@ public class hoKhau {
     public void setNgayLap(Date ngayLap) {
         this.ngayLap = ngayLap;
     }
+
+
 }

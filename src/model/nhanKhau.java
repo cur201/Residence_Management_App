@@ -1,6 +1,8 @@
 package model;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class nhanKhau {
     private int idNhanKhau;
@@ -24,8 +26,12 @@ public class nhanKhau {
     private boolean trangThaiTamVang;
     private String ghiChu;
 
+    private List<String> nhanKhauList;
+
     public nhanKhau() {
+        nhanKhauList = new ArrayList<>();
     }
+
 
     public nhanKhau(int idNhanKhau, String hoTen, String bietDanh, int soCMT, Date ngayCapCMT, String noiCapCMT,
                     int namSinh, String gioiTinh, String noiSinh, String danToc, String tonGiao, String quocTich,
@@ -51,6 +57,7 @@ public class nhanKhau {
         this.trangThaiTamTru = trangThaiTamTru;
         this.trangThaiTamVang = trangThaiTamVang;
         this.ghiChu = ghiChu;
+        nhanKhauList = new ArrayList<>();
     }
 
     public int getIdNhanKhau() {
@@ -189,7 +196,7 @@ public class nhanKhau {
         this.ngayDangKyThuongTru = ngayDangKyThuongTru;
     }
 
-    public boolean isTrangThaiTamTru() {
+    public boolean getTrangThaiTamTru() {
         return trangThaiTamTru;
     }
 
@@ -197,7 +204,7 @@ public class nhanKhau {
         this.trangThaiTamTru = trangThaiTamTru;
     }
 
-    public boolean isTrangThaiTamVang() {
+    public boolean getTrangThaiTamVang() {
         return trangThaiTamVang;
     }
 
