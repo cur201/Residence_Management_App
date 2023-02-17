@@ -20,6 +20,9 @@ public class suKienNhaVanHoa {
         this.ghiChu = ghiChu;
     }
 
+    public suKienNhaVanHoa(int idSuKien, String ngayToChuc, String loaiSuKien, int phiSuDung, String ghiChu) {
+    }
+
     public Integer getIdSuKien() {
         return idSuKien;
     }

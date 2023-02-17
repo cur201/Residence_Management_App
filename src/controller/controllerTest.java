@@ -154,7 +154,7 @@ public class controllerTest {
         String categoryCSVC = "hienTrang";
         String categoryValueCSVC = "xau";
         canBoNhaVanHoa_controller canBoNhaVanHoaController = new canBoNhaVanHoa_controller();
-        ArrayList<coSoNhaVanHoa> dsCoSo = canBoNhaVanHoaController.thongKeCoSoVatChatNhaVanHoa(categoryCSVC, categoryValueCSVC);
+        ArrayList<coSoNhaVanHoa> dsCoSo = canBoNhaVanHoaController.thongKeCoSoVatChatNhaVanHoa();
 
         for(coSoNhaVanHoa cs: dsCoSo)
         {
