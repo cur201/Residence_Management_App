@@ -26,7 +26,7 @@
               <text value="Tài khoản của cán bộ nhà văn hóa"/>
             </properties>
           </component>
-          <component id="61c30" class="javax.swing.JButton" binding="thoátButton" default-binding="true">
+          <component id="61c30" class="javax.swing.JButton" binding="btnLogout">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>

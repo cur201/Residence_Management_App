@@ -16,7 +16,7 @@ import static constancy.constancy.DEFAULT_ID;
 
 public class canBoNhaVanHoaHomePage extends  JDialog{
     private JPanel canBoNhaVanHoaHomePagePanel;
-    private JButton thoátButton;
+    private JButton btnLogout;
     private JButton btnCSVC;
     private JButton btnSuKien;
     private JPanel rootPanel;
@@ -424,6 +424,14 @@ public class canBoNhaVanHoaHomePage extends  JDialog{
                             "Failed",
                             JOptionPane.ERROR_MESSAGE);
                 }
+            }
+        });
+        btnLogout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                Main main = new Main(parent);
+                main.setVisible(true);
             }
         });
     }
