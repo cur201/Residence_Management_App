@@ -210,7 +210,7 @@ public class controllerTest {
         dsLichSuNhanKhau = toTruongController.lichSuThayDoiNhanKhau(idNhanKhauTruyVan);
         for(lichSuNhanKhau ls: dsLichSuNhanKhau)
         {
-            System.out.println(ls.getIdNhanKhau() + " - " + ls.getTypeNhanKhau() + " - " + ls.getNgayThayDoi() + "\n" );
+            System.out.println(ls.getIdNhanKhau() + " - " + ls.getLoaiThayDoi() + " - " + ls.getNgayThayDoi() + "\n" );
         }
     }
 }

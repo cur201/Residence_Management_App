@@ -11,7 +11,7 @@ public class toTruongController {
             "root", "root");
 
 
-    ArrayList<nhanKhau> timKiemThongTin(String category, String keyword)
+    public ArrayList<nhanKhau> timKiemThongTin(String category, String keyword)
     {
         ArrayList<nhanKhau> ketQuaTimKiem = new ArrayList<nhanKhau>();
         Statement stmt;
@@ -149,13 +149,17 @@ public class toTruongController {
                         "FROM dang_ky_su_dung_nha_van_hoa WHERE idGiayDangKy = " + idSuDungNhaVanHoaRecord;
                 PreparedStatement dangKySuDungNhaVanhoaRecord = connectDB.prepareStatement(sqlInsertInToThemSuKienNhaVanHoa);
                 int thanhCong = dangKySuDungNhaVanhoaRecord.executeUpdate();
-                if(thanhCong==0)
+
+                String delete = "DELETE FROM dang_ky_su_dung_nha_van_hoa WHERE idGiayDangKy = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, idSuDungNhaVanHoaRecord);
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(thanhCong == 0 || deleteThanhCong == 0)
                 {
                     return false;
                 }
-                else{
-                    return true;
-                }
+                else{return true;}
             }catch(SQLException e){
                 e.printStackTrace();
                 return false;
@@ -163,7 +167,21 @@ public class toTruongController {
         }
         else
         {
-            return false;
+            try{
+                String delete = "DELETE FROM dang_ky_su_dung_nha_van_hoa WHERE idGiayDangKy = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, idSuDungNhaVanHoaRecord);
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(deleteThanhCong == 0)
+                {
+                    return false;
+                }
+                else{return true;}
+            }catch(SQLException e){
+                e.printStackTrace();
+                return false;
+            }
         }
     }
 
@@ -176,7 +194,13 @@ public class toTruongController {
                 PreparedStatement tamVangRecord = connectDB.prepareStatement(sqlInsertInToThemTamVang);
                 tamVangRecord.setInt(1, tamVang.getIdNhanKhau());
                 int thanhCong = tamVangRecord.executeUpdate();
-                if(thanhCong == 0)
+
+                String delete = "DELETE FROM tam_vang WHERE idGiayTamVang = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, tamVang.getIdGiayTamVang());
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(thanhCong == 0 || deleteThanhCong == 0)
                 {
                     return false;
                 }
@@ -188,7 +212,21 @@ public class toTruongController {
         }
         else
         {
-            return false;
+            try{
+                String delete = "DELETE FROM tam_vang WHERE idGiayTamVang = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, tamVang.getIdGiayTamVang());
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(deleteThanhCong == 0)
+                {
+                    return false;
+                }
+                else{return true;}
+            }catch(SQLException e){
+                e.printStackTrace();
+                return false;
+            }
         }
     }
 
@@ -201,7 +239,13 @@ public class toTruongController {
                 PreparedStatement tamTruRecord = connectDB.prepareStatement(sqlInsertInToThemTamTru);
                 tamTruRecord.setInt(1, tamTru.getIdNhanKhau());
                 int thanhCong = tamTruRecord.executeUpdate();
-                if(thanhCong == 0)
+
+                String delete = "DELETE FROM tam_tru WHERE idGiayTamTru = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, tamTru.getIdGiayTamTru());
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(thanhCong == 0 || deleteThanhCong == 0)
                 {
                     return false;
                 }
@@ -213,7 +257,21 @@ public class toTruongController {
         }
         else
         {
-            return false;
+            try{
+                String delete = "DELETE FROM tam_tru WHERE idGiayTamTru = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, tamTru.getIdGiayTamTru());
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(deleteThanhCong == 0)
+                {
+                    return false;
+                }
+                else{return true;}
+            }catch(SQLException e){
+                e.printStackTrace();
+                return false;
+            }
         }
     }
 
@@ -229,7 +287,13 @@ public class toTruongController {
                 PreparedStatement themNhanKhauRecord = connectDB.prepareStatement(sqlInsertInToThemNhanKhau);
                 themNhanKhauRecord.setInt(1, idThemNhanKhauRecord);
                 int thanhCong = themNhanKhauRecord.executeUpdate();
-                if(thanhCong == 0)
+
+                String delete = "DELETE FROM dang_ky_them_nhan_khau WHERE idGiayDangKyThemNhanKhau = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, idThemNhanKhauRecord);
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(thanhCong == 0 || deleteThanhCong == 0)
                 {
                     return false;
                 }
@@ -241,7 +305,21 @@ public class toTruongController {
         }
         else
         {
-            return false;
+            try{
+                String delete = "DELETE FROM dang_ky_them_nhan_khau WHERE idGiayDangKyThemNhanKhau = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, idThemNhanKhauRecord);
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(deleteThanhCong == 0)
+                {
+                    return false;
+                }
+                else{return true;}
+            }catch(SQLException e){
+                e.printStackTrace();
+                return false;
+            }
         }
     }
 
@@ -256,7 +334,13 @@ public class toTruongController {
                 PreparedStatement themHoKhauRecord = connectDB.prepareStatement(sqlInsertInToThemHoKhau);
                 themHoKhauRecord.setInt(1, idThemHoKhauRecord);
                 int thanhCong = themHoKhauRecord.executeUpdate();
-                if(thanhCong == 0)
+
+                String delete = "DELETE FROM dang_ky_them_ho_khau WHERE idGiayDangKyThemHoKhau = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, idThemHoKhauRecord);
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(thanhCong == 0 || deleteThanhCong == 0)
                 {
                     return false;
                 }
@@ -268,7 +352,21 @@ public class toTruongController {
         }
         else
         {
-            return false;
+            try{
+                String delete = "DELETE FROM dang_ky_them_ho_khau WHERE idGiayDangKyThemHoKhau = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, idThemHoKhauRecord);
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(deleteThanhCong == 0)
+                {
+                    return false;
+                }
+                else{return true;}
+            }catch(SQLException e){
+                e.printStackTrace();
+                return false;
+            }
         }
     }
 
@@ -280,9 +378,14 @@ public class toTruongController {
                 String sqlInsertInToXoaNhanKhau = "DELETE FROM nhan_khau WHERE (idNhanKhau = ?);";
                 PreparedStatement xoaNhanKhauRecord = connectDB.prepareStatement(sqlInsertInToXoaNhanKhau);
                 xoaNhanKhauRecord.setInt(1, xoaNhanKhau.getIdNguoiBiXoa());
-
                 int thanhCong = xoaNhanKhauRecord.executeUpdate();
-                if(thanhCong == 0)
+
+                String delete = "DELETE FROM dang_ky_xoa_nhan_khau WHERE idGiayDangKyXoaNhanKhau = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, xoaNhanKhau.getIdGiayDangKyXoaNhanKhau());
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(thanhCong == 0 || deleteThanhCong == 0)
                 {
                     return false;
                 }
@@ -294,7 +397,21 @@ public class toTruongController {
         }
         else
         {
-            return false;
+            try{
+                String delete = "DELETE FROM dang_ky_xoa_nhan_khau WHERE idGiayDangKyXoaNhanKhau = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, xoaNhanKhau.getIdGiayDangKyXoaNhanKhau());
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(deleteThanhCong == 0)
+                {
+                    return false;
+                }
+                else{return true;}
+            }catch(SQLException e){
+                e.printStackTrace();
+                return false;
+            }
         }
     }
 
@@ -306,10 +423,14 @@ public class toTruongController {
                 String sqlInsertInToXoaHoKhau = "DELETE FROM ho_khau WHERE (idHoKhau = ?);";
                 PreparedStatement xoaHoKhauRecord = connectDB.prepareStatement(sqlInsertInToXoaHoKhau);
                 xoaHoKhauRecord.setInt(1, xoaHoKhau.getIdHoKhau());
-
-
                 int thanhCong = xoaHoKhauRecord.executeUpdate();
-                if(thanhCong == 0)
+
+                String delete = "DELETE FROM dang_ky_xoa_ho_khau WHERE idGiayDangKyXoaHoKhau = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, xoaHoKhau.getIdGiayDangKyXoaHoKhau());
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(thanhCong == 0 || deleteThanhCong == 0)
                 {
                     return false;
                 }
@@ -321,7 +442,21 @@ public class toTruongController {
         }
         else
         {
-            return false;
+            try{
+                String delete = "DELETE FROM dang_ky_xoa_ho_khau WHERE idGiayDangKyXoaHoKhau = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, xoaHoKhau.getIdGiayDangKyXoaHoKhau());
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(deleteThanhCong == 0)
+                {
+                    return false;
+                }
+                else{return true;}
+            }catch(SQLException e){
+                e.printStackTrace();
+                return false;
+            }
         }
     }
 
@@ -378,7 +513,13 @@ public class toTruongController {
                     suaNhanKhauRecord.setInt(20, suaNhanKhau.getIdNguoiDuocSua());
                 }
                 int thanhCong = suaNhanKhauRecord.executeUpdate();
-                if(thanhCong == 0)
+
+                String delete = "DELETE FROM dang_ky_sua_nhan_khau WHERE idGiayDangKySuaNhanKhau = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, suaNhanKhau.getIdGiayDangKySuaNhanKhau());
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(thanhCong == 0 || deleteThanhCong == 0)
                 {
                     return false;
                 }
@@ -390,7 +531,20 @@ public class toTruongController {
         }
         else
         {
-            return false;
+            try{
+                String delete = "DELETE FROM dang_ky_sua_nhan_khau WHERE idGiayDangKySuaNhanKhau = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, suaNhanKhau.getIdGiayDangKySuaNhanKhau());
+                int deleteThanhCong = deleteRecord.executeUpdate();
+                if(deleteThanhCong == 0)
+                {
+                    return false;
+                }
+                else{return true;}
+            }catch(SQLException e){
+                e.printStackTrace();
+                return false;
+            }
         }
     }
 
@@ -421,7 +575,13 @@ public class toTruongController {
                     suaHoKhauRecord.setInt(4, suaHoKhau.getIdHoKhau());
                 }
                 int thanhCong = suaHoKhauRecord.executeUpdate();
-                if(thanhCong == 0)
+
+                String delete = "DELETE FROM dang_ky_sua_ho_khau WHERE idGiayDangKySuaHoKhau = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, suaHoKhau.getIdGiayDangKySuaHoKhau());
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(thanhCong == 0 || deleteThanhCong == 0)
                 {
                     return false;
                 }
@@ -433,7 +593,21 @@ public class toTruongController {
         }
         else
         {
-            return false;
+            try{
+                String delete = "DELETE FROM dang_ky_sua_ho_khau WHERE idGiayDangKySuaHoKhau = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, suaHoKhau.getIdGiayDangKySuaHoKhau());
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(deleteThanhCong == 0)
+                {
+                    return false;
+                }
+                else{return true;}
+            }catch(SQLException e){
+                e.printStackTrace();
+                return false;
+            }
         }
     }
 
@@ -448,7 +622,13 @@ public class toTruongController {
                 PreparedStatement themThanhVienCuaHoRecord = connectDB.prepareStatement(sqlInsertInToThemThanhVienCuaHo);
                 themThanhVienCuaHoRecord.setInt(1, idGiayDangKyThemNhanKhauVaoHo);
                 int thanhCong = themThanhVienCuaHoRecord.executeUpdate();
-                if(thanhCong == 0)
+
+                String delete = "DELETE FROM dang_ky_them_nhan_khau_vao_ho WHERE idGiayDangKyThemNhanKhauVaoHo = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, idGiayDangKyThemNhanKhauVaoHo);
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(thanhCong == 0 || deleteThanhCong == 0)
                 {
                     return false;
                 }
@@ -460,7 +640,21 @@ public class toTruongController {
         }
         else
         {
-            return false;
+            try{
+                String delete = "DELETE FROM dang_ky_them_nhan_khau_vao_ho WHERE idGiayDangKyThemNhanKhauVaoHo = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, idGiayDangKyThemNhanKhauVaoHo);
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(deleteThanhCong == 0)
+                {
+                    return false;
+                }
+                else{return true;}
+            }catch(SQLException e){
+                e.printStackTrace();
+                return false;
+            }
         }
     }
 
@@ -473,7 +667,13 @@ public class toTruongController {
                 PreparedStatement xoaThanhVienKhoiHoRecord = connectDB.prepareStatement(sqlInsertInToXoaThanhVienKhoiHo);
                 xoaThanhVienKhoiHoRecord.setInt(1, idGiayDangKyXoaNhanKhauKhoiHo);
                 int thanhCong = xoaThanhVienKhoiHoRecord.executeUpdate();
-                if(thanhCong == 0)
+
+                String delete = "DELETE FROM dang_ky_xoa_nhan_khau_khoi_ho WHERE idGiayDangKyXoaNhanKhauKhoiHo = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, idGiayDangKyXoaNhanKhauKhoiHo);
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(thanhCong == 0 || deleteThanhCong == 0)
                 {
                     return false;
                 }
@@ -485,7 +685,342 @@ public class toTruongController {
         }
         else
         {
-            return false;
+            try{
+                String delete = "DELETE FROM dang_ky_xoa_nhan_khau_khoi_ho WHERE idGiayDangKyXoaNhanKhauKhoiHo = ?";
+                PreparedStatement deleteRecord = connectDB.prepareStatement(delete);
+                deleteRecord.setInt(1, idGiayDangKyXoaNhanKhauKhoiHo);
+                int deleteThanhCong = deleteRecord.executeUpdate();
+
+                if(deleteThanhCong == 0)
+                {
+                    return false;
+                }
+                else{return true;}
+            }catch(SQLException e){
+                e.printStackTrace();
+                return false;
+            }
+        }
+    }
+    public ArrayList<dangKyThemNhanKhau> xemDKThemNhanKhau()
+    {
+        ArrayList<dangKyThemNhanKhau> dsKetQua = new ArrayList<dangKyThemNhanKhau>();
+        Statement stmt;
+        try{
+            stmt = connectDB.createStatement();
+            String sqlSelect = "SELECT * FROM dang_ky_them_nhan_khau";
+            ResultSet tblKetQua = stmt.executeQuery(sqlSelect);
+
+            while(tblKetQua.next())
+            {
+                int idGiayDangKyThemNhanKhau = tblKetQua.getInt("idGiayDangKyThemNhanKhau");
+                int idNguoiKhai = tblKetQua.getInt("idNguoiKhai");
+                Date ngayKhai = tblKetQua.getDate("ngayKhai");
+                String hoTen = tblKetQua.getString("hoTen");
+                String bietDanh = tblKetQua.getString("bietDanh");
+                int soCMT = tblKetQua.getInt("soCMT");
+                Date ngayCapCMT = tblKetQua.getDate("ngayCapCMT");
+                String noiCapCMT = tblKetQua.getString("noiCapCMT");
+                int namSinh = tblKetQua.getInt("namSinh");
+                String gioiTinh = tblKetQua.getString("gioiTinh");
+                String noiSinh = tblKetQua.getString("noiSinh");
+                String danToc = tblKetQua.getString("danToc");
+                String tonGiao = tblKetQua.getString("tonGiao");
+                String quocTich = tblKetQua.getString("quocTich");
+                String nguyenQuan = tblKetQua.getString("nguyenQuan");
+                String noiThuongTru = tblKetQua.getString("noiThuongTru");
+                String ngheNghiep = tblKetQua.getString("ngheNghiep");
+                String noiLamViec = tblKetQua.getString("noiLamViec");
+                Date ngayDangKyThuongTru = tblKetQua.getDate("ngayDangKyThuongTru");
+                boolean trangThaiTamTru = tblKetQua.getBoolean("trangThaiTamTru");
+                boolean trangThaiTamVang = tblKetQua.getBoolean("trangThaiTamVang");
+                String ghiChu = tblKetQua.getString("ghiChu");
+                dangKyThemNhanKhau dk = new dangKyThemNhanKhau(idGiayDangKyThemNhanKhau, idNguoiKhai, ngayKhai, hoTen, bietDanh,
+                        soCMT, ngayCapCMT, noiCapCMT, namSinh, gioiTinh, noiSinh, danToc, tonGiao, quocTich, nguyenQuan, noiThuongTru,
+                        ngheNghiep, noiLamViec, ngayDangKyThuongTru, trangThaiTamTru, trangThaiTamVang, ghiChu);
+                dsKetQua.add(dk);
+            }
+            return dsKetQua;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public ArrayList<dangKySuaNhanKhau> xemDKSuaNhanKhau()
+    {
+        ArrayList<dangKySuaNhanKhau> dsKetQua = new ArrayList<dangKySuaNhanKhau>();
+        Statement stmt;
+        try{
+            stmt = connectDB.createStatement();
+            String sqlSelect = "SELECT * FROM dang_ky_sua_nhan_khau";
+            ResultSet tblKetQua = stmt.executeQuery(sqlSelect);
+
+            while(tblKetQua.next())
+            {
+                int idGiayDangKySuaNhanKhau = tblKetQua.getInt("idGiayDangKySuaNhanKhau");
+                int idNguoiKhai = tblKetQua.getInt("idNguoiKhai");
+                int idNguoiDuocSua = tblKetQua.getInt("idNguoiDuocSua");
+                Date ngayKhai = tblKetQua.getDate("ngayKhai");
+                String hoTen = tblKetQua.getString("hoTenMoi");
+                String bietDanh = tblKetQua.getString("bietDanhMoi");
+                int soCMT = tblKetQua.getInt("soCMTMoi");
+                Date ngayCapCMT = tblKetQua.getDate("ngayCapCMT");
+                String noiCapCMT = tblKetQua.getString("noiCapCMT");
+                int namSinh = tblKetQua.getInt("namSinhMoi");
+                String gioiTinh = tblKetQua.getString("gioiTinhMoi");
+                String noiSinh = tblKetQua.getString("noiSinhMoi");
+                String danToc = tblKetQua.getString("danTocMoi");
+                String tonGiao = tblKetQua.getString("tonGiaoMoi");
+                String quocTich = tblKetQua.getString("quocTichMoi");
+                String nguyenQuan = tblKetQua.getString("nguyenQuanMoi");
+                String noiThuongTru = tblKetQua.getString("noiThuongTruMoi");
+                String ngheNghiep = tblKetQua.getString("ngheNghiepMoi");
+                String noiLamViec = tblKetQua.getString("noiLamViecMoi");
+                Date ngayDangKyThuongTru = tblKetQua.getDate("ngayDangKyThuongTruMoi");
+                boolean trangThaiTamTru = tblKetQua.getBoolean("tamTruMoi");
+                boolean trangThaiTamVang = tblKetQua.getBoolean("tamVangMoi");
+                String ghiChu = tblKetQua.getString("ghiChuMoi");
+                dangKySuaNhanKhau dk = new dangKySuaNhanKhau(idGiayDangKySuaNhanKhau, idNguoiKhai, idNguoiDuocSua, ngayKhai, hoTen, bietDanh,
+                        soCMT, ngayCapCMT, noiCapCMT, namSinh, gioiTinh, noiSinh, danToc, tonGiao, quocTich, nguyenQuan, noiThuongTru,
+                        ngheNghiep, noiLamViec, ngayDangKyThuongTru, trangThaiTamTru, trangThaiTamVang, ghiChu);
+                dsKetQua.add(dk);
+            }
+            return dsKetQua;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public ArrayList<dangKyXoaNhanKhau> xemDKXoaNhanKhau()
+    {
+        ArrayList<dangKyXoaNhanKhau> dsKetQua = new ArrayList<dangKyXoaNhanKhau>();
+        Statement stmt;
+        try{
+            stmt = connectDB.createStatement();
+            String sqlSelect = "SELECT * FROM dang_ky_xoa_nhan_khau";
+            ResultSet tblKetQua = stmt.executeQuery(sqlSelect);
+
+            while(tblKetQua.next())
+            {
+                int idGiayDangKyThemNhanKhau = tblKetQua.getInt("idGiayDangKyXoaNhanKhau");
+                int idNguoiKhai = tblKetQua.getInt("idNguoiKhai");
+                int idNguoiBiXoa = tblKetQua.getInt("idNguoiBiXoa");
+                Date ngayKhai = tblKetQua.getDate("ngayKhai");
+                Date ngayXoa = tblKetQua.getDate("ngayXoa");
+                String noiChuyen = tblKetQua.getString("noiChuyen");
+                String ghiChu = tblKetQua.getString("ghiChu");
+                dangKyXoaNhanKhau dk = new dangKyXoaNhanKhau(idGiayDangKyThemNhanKhau, idNguoiKhai, idNguoiBiXoa, ngayKhai, ngayXoa, noiChuyen, ghiChu);
+                dsKetQua.add(dk);
+            }
+            return dsKetQua;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public ArrayList<tamTru> xemDKTamTru()
+    {
+        ArrayList<tamTru> dsKetQua = new ArrayList<tamTru>();
+        Statement stmt;
+        try{
+            stmt = connectDB.createStatement();
+            String sqlSelect = "SELECT * FROM tam_tru";
+            ResultSet tblKetQua = stmt.executeQuery(sqlSelect);
+
+            while(tblKetQua.next())
+            {
+                int idGiayTamTru = tblKetQua.getInt("idGiayTamTru");
+                int idNhanKhau = tblKetQua.getInt("idNhanKhau");
+                String noiTamTru = tblKetQua.getString("noiTamTru");
+                String noiThuongTru = tblKetQua.getString("noiThuongTru");
+                Date tuNgay = tblKetQua.getDate("tuNgay");
+                Date denNgay = tblKetQua.getDate("denNgay");
+                String lyDo = tblKetQua.getString("lyDo");
+                tamTru dk = new tamTru(idGiayTamTru, idNhanKhau, noiTamTru, noiThuongTru, tuNgay, denNgay, lyDo);
+                dsKetQua.add(dk);
+            }
+            return dsKetQua;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public ArrayList<tamVang> xemDKTamVang()
+    {
+        ArrayList<tamVang> dsKetQua = new ArrayList<tamVang>();
+        Statement stmt;
+        try{
+            stmt = connectDB.createStatement();
+            String sqlSelect = "SELECT * FROM tam_vang";
+            ResultSet tblKetQua = stmt.executeQuery(sqlSelect);
+
+            while(tblKetQua.next())
+            {
+                int idGiayTamVang = tblKetQua.getInt("idGiayTamVang");
+                int idNhanKhau = tblKetQua.getInt("idNhanKhau");
+                String noiThuongTru = tblKetQua.getString("noiThuongTru");
+                Date tuNgay = tblKetQua.getDate("tuNgay");
+                Date denNgay = tblKetQua.getDate("denNgay");
+                String lyDo = tblKetQua.getString("lyDo");
+                tamVang dk = new tamVang(idGiayTamVang, idNhanKhau, noiThuongTru, tuNgay, denNgay, lyDo);
+                dsKetQua.add(dk);
+            }
+            return dsKetQua;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public ArrayList<dangKyThemHoKhau> xemDKThemHoKhau()
+    {
+        ArrayList<dangKyThemHoKhau> dsKetQua = new ArrayList<dangKyThemHoKhau>();
+        Statement stmt;
+        try{
+            stmt = connectDB.createStatement();
+            String sqlSelect = "SELECT * FROM dang_ky_them_ho_khau";
+            ResultSet tblKetQua = stmt.executeQuery(sqlSelect);
+
+            while(tblKetQua.next())
+            {
+                int idGiayDangKyThemHoKhau = tblKetQua.getInt("idGiayDangKyThemHoKhau");
+                int idChuHo = tblKetQua.getInt("idChuHo");
+                String maKhuVuc = tblKetQua.getString("maKhuVuc");
+                String diaChi = tblKetQua.getString("diaChi");
+                Date ngayLap = tblKetQua.getDate("ngayLap");
+                Date ngayKhai = tblKetQua.getDate("ngayKhai");
+                int idNguoiKhai = tblKetQua.getInt("idNguoiKhai");
+                dangKyThemHoKhau dk = new dangKyThemHoKhau(idGiayDangKyThemHoKhau, idChuHo, maKhuVuc, diaChi, ngayLap, ngayKhai, idNguoiKhai);
+                dsKetQua.add(dk);
+            }
+            return dsKetQua;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public ArrayList<dangKySuaHoKhau> xemDKSuaHoKhau()
+    {
+        ArrayList<dangKySuaHoKhau> dsKetQua = new ArrayList<dangKySuaHoKhau>();
+        Statement stmt;
+        try{
+            stmt = connectDB.createStatement();
+            String sqlSelect = "SELECT * FROM dang_ky_sua_ho_khau";
+            ResultSet tblKetQua = stmt.executeQuery(sqlSelect);
+
+            while(tblKetQua.next())
+            {
+                int idGiayDangKySuaHoKhau = tblKetQua.getInt("idGiayDangKySuaHoKhau");
+                int idHoKhau = tblKetQua.getInt("idHoKhau");
+                int idChuHoMoi = tblKetQua.getInt("idChuHoMoi");
+                String diaChiMoi = tblKetQua.getString("diaChiMoi");
+                Date ngayThayDoi = tblKetQua.getDate("ngayThayDoi");
+                int idNguoiKhai = tblKetQua.getInt("idNguoiKhai");
+                dangKySuaHoKhau dk = new dangKySuaHoKhau(idGiayDangKySuaHoKhau, idHoKhau, idChuHoMoi, diaChiMoi, ngayThayDoi, idNguoiKhai);
+                dsKetQua.add(dk);
+            }
+            return dsKetQua;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public ArrayList<dangKyXoaHoKhau> xemDKXoaHoKhau()
+    {
+        ArrayList<dangKyXoaHoKhau> dsKetQua = new ArrayList<dangKyXoaHoKhau>();
+        Statement stmt;
+        try{
+            stmt = connectDB.createStatement();
+            String sqlSelect = "SELECT * FROM dang_ky_xoa_ho_khau";
+            ResultSet tblKetQua = stmt.executeQuery(sqlSelect);
+
+            while(tblKetQua.next())
+            {
+                int idGiayDangKyXoaHoKhau = tblKetQua.getInt("idGiayDangKyXoaHoKhau");
+                int idHoKhau = tblKetQua.getInt("idHoKhau");
+                String lyDo = tblKetQua.getString("lyDo");
+                Date ngayKhai = tblKetQua.getDate("ngayKhai");
+                int idNguoiKhai = tblKetQua.getInt("idNguoiKhai");
+                dangKyXoaHoKhau dk = new dangKyXoaHoKhau(idGiayDangKyXoaHoKhau, idHoKhau, lyDo, ngayKhai, idNguoiKhai);
+                dsKetQua.add(dk);
+            }
+            return dsKetQua;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public ArrayList<dangKyThemNhanKhauVaoHo> xemDKThemNhanKhauVaoHo()
+    {
+        ArrayList<dangKyThemNhanKhauVaoHo> dsKetQua = new ArrayList<dangKyThemNhanKhauVaoHo>();
+        Statement stmt;
+        try{
+            stmt = connectDB.createStatement();
+            String sqlSelect = "SELECT * FROM dang_ky_them_nhan_khau_vao_ho";
+            ResultSet tblKetQua = stmt.executeQuery(sqlSelect);
+
+            while(tblKetQua.next())
+            {
+                int idGiayDangKyThemNhanKhauVaoHo = tblKetQua.getInt("idGiayDangKyThemNhanKhauVaoHo");
+                Date ngayKhai = tblKetQua.getDate("ngayKhai");
+                int idNhanKhauDuocThem = tblKetQua.getInt("idNhanKhauDuocThem");
+                int idHoKhauDuocThem = tblKetQua.getInt("idHoKhauDuocThem");
+                String quanHeVoiChuHo = tblKetQua.getString("quanHeVoiChuHo");
+                dangKyThemNhanKhauVaoHo dk = new dangKyThemNhanKhauVaoHo(idGiayDangKyThemNhanKhauVaoHo, ngayKhai, idNhanKhauDuocThem, idHoKhauDuocThem, quanHeVoiChuHo);
+                dsKetQua.add(dk);
+            }
+            return dsKetQua;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public ArrayList<dangKyXoaNhanKhauKhoiHo> xemDKXoaNhanKhauKhoiHo()
+    {
+        ArrayList<dangKyXoaNhanKhauKhoiHo> dsKetQua = new ArrayList<dangKyXoaNhanKhauKhoiHo>();
+        Statement stmt;
+        try{
+            stmt = connectDB.createStatement();
+            String sqlSelect = "SELECT * FROM dang_ky_xoa_nhan_khau_khoi_ho";
+            ResultSet tblKetQua = stmt.executeQuery(sqlSelect);
+
+            while(tblKetQua.next())
+            {
+                int idGiayDangKyXoaNhanKhauKhoiHo = tblKetQua.getInt("idGiayDangKyXoaNhanKhauKhoiHo");
+                Date ngayKhai = tblKetQua.getDate("ngayKhai");
+                int idNhanKhauBiXoa = tblKetQua.getInt("idNhanKhauBiXoa");
+                int idHoKhauBiXoa = tblKetQua.getInt("idHoKhauBiXoa");
+                dangKyXoaNhanKhauKhoiHo dk = new dangKyXoaNhanKhauKhoiHo(idGiayDangKyXoaNhanKhauKhoiHo, ngayKhai, idNhanKhauBiXoa, idHoKhauBiXoa);
+                dsKetQua.add(dk);
+            }
+            return dsKetQua;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public ArrayList<dangKySuDungNhaVanHoa> xemDKSuDungNhaVanHoa()
+    {
+        ArrayList<dangKySuDungNhaVanHoa> dsKetQua = new ArrayList<dangKySuDungNhaVanHoa>();
+        Statement stmt;
+        try{
+            stmt = connectDB.createStatement();
+            String sqlSelect = "SELECT * FROM dang_ky_su_dung_nha_van_hoa";
+            ResultSet tblKetQua = stmt.executeQuery(sqlSelect);
+
+            while(tblKetQua.next())
+            {
+                int idGiayDangKy = tblKetQua.getInt("idGiayDangKy");
+                Date ngayToChuc = tblKetQua.getDate("ngayToChuc");
+                String loaiSuKien = tblKetQua.getString("loaiSuKien");
+                int phiSuDung = tblKetQua.getInt("phiSuDung");
+                String ghiChu = tblKetQua.getString("ghiChu");
+                dangKySuDungNhaVanHoa dk = new dangKySuDungNhaVanHoa(idGiayDangKy, ngayToChuc, loaiSuKien, phiSuDung, ghiChu);
+                dsKetQua.add(dk);
+            }
+            return dsKetQua;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return null;
         }
     }
 }

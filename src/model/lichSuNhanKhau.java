@@ -5,15 +5,15 @@ import java.sql.Date;
 public class lichSuNhanKhau {
     private Integer idNhanKhau;
     private Date ngayThayDoi;
-    private String typeNhanKhau;
+    private String loaiThayDoi;
 
     public lichSuNhanKhau() {
     }
 
-    public lichSuNhanKhau(Integer idNhanKhau, Date ngayThayDoi, String typeNhanKhau) {
+    public lichSuNhanKhau(Integer idNhanKhau, Date ngayThayDoi, String loaiThayDoi) {
         this.idNhanKhau = idNhanKhau;
         this.ngayThayDoi = ngayThayDoi;
-        this.typeNhanKhau = typeNhanKhau;
+        this.loaiThayDoi = loaiThayDoi;
     }
 
     public Integer getIdNhanKhau() {
@@ -32,11 +32,11 @@ public class lichSuNhanKhau {
         this.ngayThayDoi = ngayThayDoi;
     }
 
-    public String getTypeNhanKhau() {
-        return typeNhanKhau;
+    public String getLoaiThayDoi() {
+        return loaiThayDoi;
     }
 
-    public void setTypeNhanKhau(String typeNhanKhau) {
-        this.typeNhanKhau = typeNhanKhau;
+    public void setLoaiThayDoi(String loaiThayDoi) {
+        this.loaiThayDoi = loaiThayDoi;
     }
 }
